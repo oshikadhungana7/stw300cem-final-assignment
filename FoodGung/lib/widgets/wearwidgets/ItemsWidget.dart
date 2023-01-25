@@ -8,7 +8,7 @@ class ItemsWidget extends StatefulWidget {
   final String? productDescription;
   final int? productPrice;
   final Function()? onPressed;
-  ItemsWidget({
+  const ItemsWidget({super.key, 
     this.id,
     this.productImage,
     this.productName,
@@ -24,75 +24,79 @@ class ItemsWidget extends StatefulWidget {
 class _ItemsWidgetState extends State<ItemsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.only(left: 7, right: 7, top: 5),
-          margin: EdgeInsets.symmetric(horizontal: 4),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Column(
-            children: [
-              InkWell(
-                // onTap: widget.onPressed,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    // borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: double.infinity,
-                  height: 120,
-                  child: CachedNetworkImage(
-                    imageUrl: widget.productImage.toString(),
-                    height: MediaQuery.of(context).size.height * 0.4,
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+    return SingleChildScrollView(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(left: 7, right: 7, top: 5),
+              margin: const EdgeInsets.symmetric(horizontal: 4),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
               ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  widget.productName.toString(),
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFF4C53A5),
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  widget.productDescription.toString(),
-                  style: TextStyle(fontSize: 6, color: Color(0xFF4C53A5)),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 3, horizontal: 2),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      widget.productPrice.toString(),
-                      style: TextStyle(
-                          fontSize: 6,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF4C53A5)),
+              child: Column(
+                children: [
+                  InkWell(
+                    // onTap: widget.onPressed,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        // borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: double.infinity,
+                      height: 120,
+                      child: CachedNetworkImage(
+                        imageUrl: widget.productImage.toString(),
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    Icon(
-                      Icons.shopping_cart_checkout,
-                      color: Color(0xFF4C53A5),
-                      size: 17,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      widget.productName.toString(),
+                      style: const TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF4C53A5),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      widget.productDescription.toString(),
+                      style: const TextStyle(fontSize: 6, color: Color(0xFF4C53A5)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 2),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          widget.productPrice.toString(),
+                          style: const TextStyle(
+                              fontSize: 6,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF4C53A5)),
+                        ),
+                        const Icon(
+                          Icons.shopping_cart_checkout,
+                          color: Color(0xFF4C53A5),
+                          size: 17,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

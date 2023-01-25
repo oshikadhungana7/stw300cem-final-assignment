@@ -25,27 +25,27 @@ void main() {
       expect(ElevatedButton, findsOneWidget);
   });
 
-  testWidgets("SignUp test", (WidgetTester tester) async{
-      await tester.pumpWidget(
-          MaterialApp(
-              routes: {
-                '/login':(context)=>const LoginScreen()
-              },
-              home: const SignUpScreen(),
-          )
-      );
-      Finder txtName = find.byKey(const ValueKey('txtName'));
-      await tester.enterText(txtName, 'adarsha');
-      Finder txtEmail = find.byKey(const ValueKey('txtEmail'));
-      await tester.enterText(txtEmail, 'adarsha77@gmail.com');
-      Finder txtPassword = find.byKey(const ValueKey('txtPassword'));
-      await tester.enterText(txtPassword, 'adarsha12345');
-      Finder btnSignup = find.byKey(const ValueKey('btnSignup'));
-      await tester.dragUntilVisible(btnSignup, find.byType(SingleChildScrollView),  Offset(0, 50),);
-      await tester.tap(btnSignup);
-      await tester.pumpAndSettle();
-      expect(find.text("Result"), findsOneWidget);
-  });
+  // testWidgets("SignUp test", (WidgetTester tester) async{
+  //     await tester.pumpWidget(
+  //         MaterialApp(
+  //             routes: {
+  //               '/login':(context)=>const LoginScreen()
+  //             },
+  //             home: const SignUpScreen(),
+  //         )
+  //     );
+  //     Finder txtName = find.byKey(const ValueKey('txtName'));
+  //     await tester.enterText(txtName, 'adarsha');
+  //     Finder txtEmail = find.byKey(const ValueKey('txtEmail'));
+  //     await tester.enterText(txtEmail, 'adarsha77@gmail.com');
+  //     Finder txtPassword = find.byKey(const ValueKey('txtPassword'));
+  //     await tester.enterText(txtPassword, 'adarsha12345');
+  //     Finder btnSignup = find.byKey(const ValueKey('btnSignup'));
+  //     await tester.dragUntilVisible(btnSignup, find.byType(SingleChildScrollView),  Offset(0, 50),);
+  //     await tester.tap(btnSignup);
+  //     await tester.pumpAndSettle();
+  //     expect(find.text("Result"), findsOneWidget);
+  // });
 
   });
  

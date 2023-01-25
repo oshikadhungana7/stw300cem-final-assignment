@@ -17,11 +17,11 @@ void main() {
       )
     );
       Finder txtName = find.byKey(const ValueKey('txtName'));
-      await tester.enterText(txtName, 'adarsha');
+      await tester.enterText(txtName, 'mom');
       Finder txtEmail = find.byKey(const ValueKey('txtEmail'));
-      await tester.enterText(txtEmail, 'adarsha1313@gmail.com');
+      await tester.enterText(txtEmail, 'mom@gmail.com');
       Finder txtPassword = find.byKey(const ValueKey('txtPassword'));
-      await tester.enterText(txtPassword, 'adarsha12345');
+      await tester.enterText(txtPassword, 'mom@gmail.com');
       Finder btnSignup = find.byKey(const ValueKey('btnSignup'));
       await tester.dragUntilVisible(btnSignup, find.byType(SingleChildScrollView),  const Offset(0, 70),);
       await tester.tap(btnSignup);

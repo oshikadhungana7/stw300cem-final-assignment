@@ -1,7 +1,4 @@
-
-
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -30,7 +27,7 @@ class ProductAPI{
       response = await dio.get(
         url,
         queryParameters: {'keyword':keyword},
-        options: buildCacheOptions(Duration(days: 7))
+        options: buildCacheOptions(const Duration(days: 7))
       );
      
       if (response.statusCode == 200) {

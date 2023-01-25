@@ -17,9 +17,9 @@ void main() {
     );
 
       Finder txtEmail = find.byKey(const ValueKey('txtEmail'));
-      await tester.enterText(txtEmail, 'khadka03adrsh@gmail.com');
+      await tester.enterText(txtEmail, 'mom@gmail.com');
       Finder txtPassword = find.byKey(const ValueKey('txtPassword'));
-      await tester.enterText(txtPassword, 'Kdk@03adrsh');
+      await tester.enterText(txtPassword, 'mom@gmail.com');
       Finder btnSignIn = find.byKey(const ValueKey('btnSignIn'));
       await tester.dragUntilVisible(btnSignIn, find.byType(SingleChildScrollView),  const Offset(0, 70),);
       await tester.tap(btnSignIn);
@@ -29,6 +29,7 @@ void main() {
   });
   
 }
+<<<<<<< Updated upstream
 Finder txtEmail = find.byKey(const ValueKey('txtEmail'));
       await tester.enterText(txtEmail, 'khadka03adrsh@gmail.com');
       Finder txtPassword = find.byKey(const ValueKey('txtPassword'));
@@ -42,3 +43,8 @@ Finder txtEmail = find.byKey(const ValueKey('txtEmail'));
   });
   
 }
+=======
+
+
+
+>>>>>>> Stashed changes

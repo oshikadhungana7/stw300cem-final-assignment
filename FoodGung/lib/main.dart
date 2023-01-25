@@ -1,20 +1,15 @@
-
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:new_login/constants.dart';
-import 'package:new_login/models/Review.dart';
 import 'package:new_login/object_box/ObjectBox.dart';
 import 'package:new_login/responsive/home_layout.dart';
 import 'package:new_login/responsive/login_layout.dart';
 import 'package:new_login/screens/Cart/cart_provider.dart';
 import 'package:new_login/screens/Cart/cart_screen.dart';
-import 'package:new_login/screens/Cart/product_list.dart';
 import 'package:new_login/screens/DetailsPage/ItemPage.dart';
-import 'package:new_login/screens/HomePage/homepage.dart';
-import 'package:new_login/screens/Login/login_screen.dart';
 import 'package:new_login/screens/Map/map.dart';
 import 'package:new_login/screens/OrderHistory/order_details.dart';
 import 'package:new_login/screens/OrderHistory/order_history.dart';
@@ -24,11 +19,14 @@ import 'package:new_login/screens/Shipping/confirmOrder.dart';
 import 'package:new_login/screens/Shipping/shipping_details.dart';
 
 import 'package:new_login/screens/SignUp/sign_up_screen.dart';
+import 'package:new_login/screens/WearOs/wear_home.dart';
 import 'package:new_login/screens/WearOs/wear_login.dart';
 import 'package:new_login/screens/welcome/welcome_screen.dart';
+import 'package:new_login/sensor/accelerometer.dart';
+import 'package:new_login/sensor/dashboard.dart';
+import 'package:new_login/sensor/gyroscope.dart';
+import 'package:new_login/sensor/proximity.dart';
 import 'package:provider/provider.dart';
-import 'package:shake/shake.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 
 const String API_BOX = "api_data";
@@ -74,7 +72,8 @@ class MyApp extends StatelessWidget {
 
       initialRoute: '/',
       routes: {
-        '/':(context)=>  const WelcomeScreen(),
+        '/wear':(context)=>  const WelcomeScreen(),
+        
         '/signup':(context)=>const SignUpScreen(),
         '/login':(context)=>  const LoginLayout(),
         '/dashboard':(context)=>const HomeLayout(),
@@ -86,7 +85,25 @@ class MyApp extends StatelessWidget {
         '/shippingDetails':(context)=>const ShippingDetail(),
         '/confirmOrder':(context)=>const ConfirmOrder(),
         '/orderDetails':(context)=>const OrderDetails(),
-        '/map':(context)=> const MapScreen()
+        '/map':(context)=> const MapScreen(),
+        '/':(context)=> const WearOsWatch(),
+        '/we':(context)=> const WearHomePage(),
+        // '/dash': (context) => const DashboardScreen(),
+        // '/accelerometerScreen': (context) => const AccelerometerScreen(),
+        // '/gyroscopeScreen': (context) => const GyroscopeScreen(),
+        // '/proximityScreen': (context) => const ProximityScreen(),
+        
+        
+
+      //   // '/dashboard': (context) => const DashboardScreen(),
+      // '/accelerometerScreen': (context) => const AccelerometerScreen(),
+      // '/gyroscopeScreen': (context) => const GyroscopeScreen(),
+      // '/proximityScreen': (context) => const ProximityScreen(),
+
+
+        // '/':(context)=>const SplashScreen()
+
+
       },
     );
      }),
